@@ -1,3 +1,4 @@
+
 // Question 1: 
 function ucFirstLetters(inputString) {
     let words = inputString.split(' ');
@@ -185,17 +186,22 @@ function currencyOperation(float1, float2, operation, numDecimals) {
 
 
 // Question 6:
+// function unique(duplicatesArray) {
+    // return duplicatesArray.filter((value, index, array) => array.indexOf(value) === index);
+// }
+// Explanation of option above: array.indexOf function would return the first matched word. In first example, array.indexOf('red') would always return 0. So when it comes to the second "red" (index 5), array.indexOf('red') is 0 and index is 5, which is a false. So that filter function will not pick up the second "red".
+
 function unique(duplicatesArray) {
-    return duplicatesArray.filter((value, index, array) => array.indexOf(value) === index);
+    return Array.from(new Set(duplicatesArray));
 }
 
 const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']; 
 const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]; 
 const zooAnimals = ['giraffe', 'tiger', 'flamingo', 'lion', 'tiger', 'parrot', 'flamingo', 'giraffe'];
 
-// console.log(unique(colours)) // ['red', 'green', 'blue', 'yellow', 'orange'] 
-// console.log(unique(testScores)) // [55, 84, 97, 63, 32, 91, 43]
-// console.log(unique(zooAnimals)) // [giraffe, tiger, flamingo, lion, parrot]
+console.log(unique(colours)) // ['red', 'green', 'blue', 'yellow', 'orange'] 
+console.log(unique(testScores)) // [55, 84, 97, 63, 32, 91, 43]
+console.log(unique(zooAnimals)) // [giraffe, tiger, flamingo, lion, parrot]
 
 
 // Question 7:
@@ -250,20 +256,20 @@ phoneBookABC.set('Annabelle', '0412312343');
 phoneBookABC.set('Barry', '0433221117');
 phoneBookABC.set('Caroline', '0455221182');
 
-const initialContactsDEF = [
+const contactsDEF = [
     ['Devon', '0467245170'],
     ['Eastwood', '0417452311'],
     ['Finley', '0459839047']
 ];
-phoneBookDEF.set(...initialContactsDEF[0]);
-phoneBookDEF.set(...initialContactsDEF[1]);
-phoneBookDEF.set(...initialContactsDEF[2]);
+phoneBookDEF.set(...contactsDEF[0]);
+phoneBookDEF.set(...contactsDEF[1]);
+phoneBookDEF.set(...contactsDEF[2]);
 
 phoneBookABC.set('Caroline', '0435574021');
 
 function printPhoneBook(contacts) {
-    for (let [name, phoneNumber] of contacts) {
-        // console.log(`${name} : ${phoneNumber}`);
+    for (const [name, phoneNumber] of contacts) {
+        console.log(`${name} : ${phoneNumber}`);
     }
 };
 
@@ -271,7 +277,7 @@ const phoneBook = new Map([...phoneBookABC, ...phoneBookDEF]);
 
 function printFullList(phoneBook) {
     for (const [name, phoneNumber] of phoneBook) {
-        // console.log(name);
+        console.log(name);
     }
 }
 
@@ -279,10 +285,8 @@ function printFullList(phoneBook) {
 // console.log(phoneBookDEF);
 // console.log("Phone Book ABC:"); 
 // printPhoneBook(phoneBookABC);
-// console.log("Printed Phone Book DEF:");
+// console.log("Phone Book DEF:");
 // printPhoneBook(phoneBookDEF);
-// console.log("Combined Printed Phone Book:");
-// printPhoneBook(phoneBook);
 // console.log("Full List of Names in Combined Phone Book:");
 // printFullList(phoneBook);
 
