@@ -1,4 +1,4 @@
-
+/*
 // Question 1: 
 function ucFirstLetters(inputString) {
     let words = inputString.split(' ');
@@ -247,23 +247,26 @@ function latestBook() {
     return latest;
 }
 // console.log(latestBook());
-
+*/
 
 // Question 8:
 const phoneBookABC = new Map(); //an empty map to begin with 
-const phoneBookDEF = new Map();
 phoneBookABC.set('Annabelle', '0412312343');
 phoneBookABC.set('Barry', '0433221117');
 phoneBookABC.set('Caroline', '0455221182');
 
-const contactsDEF = [
+// const phoneBookDEF = new Map();
+// const contactsDEF = [
+    // ['Devon', '0467245170'],
+    // ['Eastwood', '0417452311'],
+    // ['Finley', '0459839047']
+// ];
+
+const phoneBookDEF = new Map([
     ['Devon', '0467245170'],
     ['Eastwood', '0417452311'],
     ['Finley', '0459839047']
-];
-phoneBookDEF.set(...contactsDEF[0]);
-phoneBookDEF.set(...contactsDEF[1]);
-phoneBookDEF.set(...contactsDEF[2]);
+]);
 
 phoneBookABC.set('Caroline', '0435574021');
 
@@ -281,16 +284,17 @@ function printFullList(phoneBook) {
     }
 }
 
-// console.log(phoneBookABC);
-// console.log(phoneBookDEF);
-// console.log("Phone Book ABC:"); 
-// printPhoneBook(phoneBookABC);
-// console.log("Phone Book DEF:");
-// printPhoneBook(phoneBookDEF);
-// console.log("Full List of Names in Combined Phone Book:");
-// printFullList(phoneBook);
+console.log(phoneBookABC);
+console.log(phoneBookDEF);
+console.log(phoneBook);
+console.log("Phone Book ABC:"); 
+printPhoneBook(phoneBookABC);
+console.log("Phone Book DEF:");
+printPhoneBook(phoneBookDEF);
+console.log("Full List of Names in Combined Phone Book:");
+printFullList(phoneBook);
 
-
+/*
 // Question 9:
 let salaries = { 
     "Timothy": 35000, 
@@ -354,3 +358,4 @@ function daysInBetween(date1, date2) {
 const date1 = new Date('2023-01-01');
 const date2 = new Date('2023-08-21');
 // console.log(`Days in between: ${daysInBetween(date1, date2)}`);
+*/
